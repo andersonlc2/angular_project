@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid" style="margin-right: 100px; margin-left: 100px;">
+    <a class="navbar-brand" routerLink="dashboard"> Smart School </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="professores">Professores</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="alunos">Alunos</a>
+        </li>
+      </ul>
+      <!-- Esse flex-grow deixa um espaço maximo entre os dois componentes -->
+      <div style="flex-grow: 1;" ></div>
+      <!-- Dropdown funcional do ngx-bootstrap -->
+      <ul class="navbar-nav" dropdown>
+        <li class="nav-item dropdown">
+          <a id="button-basic" dropdownToggle class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" 
+            role="button" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+            Anderson
+          </a>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" routerLink="perfil" >Perfil</a></li>
+            <li><a class="dropdown-item" style="cursor: pointer;">Sair</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
