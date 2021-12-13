@@ -1,11 +1,35 @@
 
+<!-- Se um aluno for selecionado -->
 <div *ngIf="alunoSelecionado">
-    <app-titulo [titulo]="'Aluno: '+alunoSelecionado"></app-titulo>
-    <br>
-    <button class="btn btn-default" (click)="voltar()">
-        Voltar
-    </button>
+    
+    <div class="d-flex justify-content-between">
+        <div>
+            <app-titulo [titulo]="'Aluno: '+alunoSelecionado.id"></app-titulo>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-outline-secondary btn-sm" (click)="voltar()">
+                Lista de Alunos
+            </button>
+        </div>
+    </div>
+
+    <form class="m-5">
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Nome</label>
+            <input type="text" value="{{alunoSelecionado.nome}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Sobrenome</label>
+            <input type="text" value="{{alunoSelecionado.sobrenome}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Telefone</label>
+            <input type="text" value="{{alunoSelecionado.telefone}}" class="form-control">
+        </div>
+    </form> 
+
 </div>
+<!-- Se não tiver aluno selecionado -->
 <div *ngIf="!alunoSelecionado">
     <app-titulo [titulo]="titulo"></app-titulo>
 
